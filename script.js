@@ -2,18 +2,10 @@ const drinks = {
 
     margarita: {
         name: "Margarita",
-        model: "models/Margarita.glb"
+        model: "models/margarita.glb"
     },
 
-    nun: {
-        name: "Nun",
-        model: "models/nun.glb"
-    },
 
-    none: {
-        name: "None",
-        model: "models/none.glb"
-    }
 
 };
 
