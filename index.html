@@ -1,27 +1,20 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-
     <meta charset="UTF-8">
-
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>AR Cocktail Menu</title>
-
-    <link rel="stylesheet" href="style.css">
 
     <script type="module"
         src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js">
     </script>
 
+    <link rel="stylesheet" href="style.css">
 </head>
 
-
 <body>
-
-    <!-- MENU -->
 
     <div id="menu">
 
@@ -31,12 +24,24 @@
             Margarita
         </button>
 
+        <button onclick="showDrink('oldFashioned')">
+            Old Fashioned
+        </button>
 
+        <button onclick="showDrink('negroni')">
+            Negroni
+        </button>
+
+        <button onclick="showDrink('spritz')">
+            Spritz
+        </button>
+
+        <button onclick="showDrink('french72')">
+            French 72
+        </button>
 
     </div>
 
-
-    <!-- 3D MODEL PAGE -->
 
     <div id="drink">
 
@@ -48,7 +53,6 @@
 
         <model-viewer
             id="viewer"
-            src=""
             camera-controls
             auto-rotate
             autoplay

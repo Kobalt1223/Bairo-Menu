@@ -1,11 +1,29 @@
 const drinks = {
 
     margarita: {
-        name: "margarita",
+        name: "Margarita",
         model: "models/margarita.glb"
     },
 
+    oldFashioned: {
+        name: "Old Fashioned",
+        model: "models/old-fashioned.glb"
+    },
 
+    negroni: {
+        name: "Negroni",
+        model: "models/negroni.glb"
+    },
+
+    spritz: {
+        name: "Spritz",
+        model: "models/spritz.glb"
+    },
+
+    french72: {
+        name: "French 72",
+        model: "models/french-72.glb"
+    }
 
 };
 
