@@ -2,7 +2,7 @@ const drinks = {
 
     Margarita: {
         name: "Margarita1",
-        model: "models/Margarita1.glb"
+        model: "D:\Bairo-Menu\Models\Margarita1.glb"
     },
 
 };
