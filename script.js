@@ -1,8 +1,8 @@
 const drinks = {
 
     margarita: {
-        name: "Margarita",
-        model: "Models/margarita.glb"
+        name: "margarita",
+        model: "models/margarita.glb"
     },
 
 
