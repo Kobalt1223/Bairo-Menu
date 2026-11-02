@@ -1,18 +1,18 @@
 const drinks = {
 
-    mojito: {
+    margarita: {
         name: "Margarita",
-        model: "models/margarita.glb"
+        model: "models/Margarita.glb"
     },
 
-    negroni: {
+    nun: {
         name: "Nun",
-        model: "models/negroni.glb"
+        model: "models/nun.glb"
     },
 
-    martini: {
+    none: {
         name: "None",
-        model: "models/martini.glb"
+        model: "models/none.glb"
     }
 
 };
