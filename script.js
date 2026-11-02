@@ -1,9 +1,19 @@
 const drinks = {
 
-    Margarita: {
-        name: "Margarita1",
-        model: "D:\Bairo-Menu\Models\Margarita1.glb"
+    mojito: {
+        name: "Margarita",
+        model: "models/margarita.glb"
     },
+
+    negroni: {
+        name: "Nun",
+        model: "models/negroni.glb"
+    },
+
+    martini: {
+        name: "None",
+        model: "models/martini.glb"
+    }
 
 };
 
