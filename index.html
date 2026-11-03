@@ -33,14 +33,24 @@
 
         <h1 id="drinkName"></h1>
 
-        <model-viewer
-            id="viewer"
-            camera-controls
-            auto-rotate
-            shadow-intensity="1"
-            exposure="1"
-            loading="eager">
-        </model-viewer>
+       
+<model-viewer
+    id="viewer"
+    camera-controls
+    auto-rotate
+    ar
+    ar-modes="webxr scene-viewer quick-look"
+    ar-scale="auto"
+    shadow-intensity="1"
+    exposure="1"
+    loading="eager">
+
+    <button slot="ar-button" class="ar-button">
+        View in AR
+    </button>
+
+</model-viewer>
+
 
         <p id="status">Loading model...</p>
         <p>Drag to rotate • Scroll or pinch to zoom</p>
