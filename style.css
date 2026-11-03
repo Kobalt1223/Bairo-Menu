@@ -25,7 +25,7 @@ button {
     font-size: 18px;
     background: #333;
     color: white;
-    border: 1px solid #666;
+    border: 1px solid #777;
     border-radius: 8px;
     cursor: pointer;
 }
@@ -34,47 +34,43 @@ button:hover {
     background: #555;
 }
 
+.viewer-container {
+    position: relative;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
 model-viewer {
     display: block;
     width: 100%;
-    max-width: 500px;
     height: 500px;
-    margin: 0 auto;
     background: #333;
-}
-
-#status {
-    color: #ccc;
-    font-size: 14px;
-}
-
-.ar-button {
-    position: absolute;
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-
-    width: auto;
-    padding: 12px 24px;
-    margin: 0;
-
-    background: white;
-    color: black;
-    border: none;
-    border-radius: 25px;
-    font-size: 16px;
-    font-weight: bold;
-    cursor: pointer;
-}
-
-/* Prevent page scrolling while rotating 3D model */
-
-model-viewer {
     touch-action: none;
     overscroll-behavior: contain;
 }
 
-/* Buttons below the viewer */
+.nav-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    width: 45px;
+    height: 45px;
+    margin: 0;
+    padding: 0;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.65);
+    color: white;
+    font-size: 24px;
+}
+
+.nav-arrow.left {
+    left: 8px;
+}
+
+.nav-arrow.right {
+    right: 8px;
+}
 
 .action-buttons {
     display: flex;
@@ -88,14 +84,16 @@ model-viewer {
     flex: 1;
     width: auto;
     margin: 0;
-    background: #333;
-    color: white;
-    border: 1px solid #777;
     border-radius: 25px;
 }
 
 .hint {
     color: #aaa;
+    font-size: 14px;
+}
+
+#status {
+    color: #ccc;
     font-size: 14px;
 }
 
@@ -106,11 +104,9 @@ model-viewer {
     position: fixed;
     inset: 0;
     z-index: 1000;
-
-    background: rgba(0, 0, 0, 0.6);
+    background: rgba(0, 0, 0, 0.55);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
-
     align-items: center;
     justify-content: center;
     padding: 20px;
@@ -125,19 +121,12 @@ model-viewer {
     position: relative;
     width: 100%;
     max-width: 400px;
-    padding: 35px 25px;
+    padding: 40px 25px;
     box-sizing: border-box;
-
     background: rgba(40, 40, 40, 0.85);
     border: 1px solid rgba(255, 255, 255, 0.2);
     border-radius: 20px;
-
     color: white;
-    text-align: center;
-}
-
-.overlay-content h2 {
-    margin-top: 0;
 }
 
 .overlay-content p {
@@ -147,17 +136,13 @@ model-viewer {
 
 .close-overlay {
     position: absolute;
-    top: 10px;
-    right: 15px;
-
-    width: 35px;
-    height: 35px;
+    top: 8px;
+    right: 12px;
+    width: 40px;
+    height: 40px;
     margin: 0;
     padding: 0;
-
     border: none;
     background: transparent;
-    color: white;
     font-size: 28px;
 }
-
