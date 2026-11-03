@@ -3,12 +3,12 @@ const drinks = {
     margarita: {
         name: "Margarita",
         model: "./models/margarita.glb",
-        ingredients: "Ingredients coming soon."
+        ingredients: "Tequila, Cointreau, Lime."
     },
     oldFashioned: {
         name: "Old Fashioned",
         model: "./models/old-fashioned.glb",
-        ingredients: "Ingredients coming soon."
+        ingredients: "Bourbon, Angostura Bitters, Sugar, Orange."
     },
     negroni: {
         name: "Negroni",
@@ -18,12 +18,12 @@ const drinks = {
     spritz: {
         name: "Spritz",
         model: "./models/spritz.glb",
-        ingredients: "Ingredients coming soon."
+        ingredients: "Prosecco, Aperitive, Soda."
     },
     french72: {
         name: "French 72",
         model: "./models/french-72.glb",
-        ingredients: "Ingredients coming soon."
+        ingredients: "Prosecco, Tatra 72, Honey, Lime."
     }
 };
 
