@@ -3,62 +3,48 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Bairo Cocktail Menu</title>
 
     <script type="module"
-      src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.1.0/model-viewer.min.js">
+        src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.1.0/model-viewer.min.js">
     </script>
 
-    <style>
-        body {
-            background: #111;
-            color: white;
-            font-family: Arial, sans-serif;
-            text-align: center;
-        }
-
-        model-viewer {
-            display: block;
-            width: 100%;
-            max-width: 500px;
-            height: 500px;
-            margin: 0 auto;
-            background: #333;
-        }
-    </style>
+    <link rel="stylesheet" href="./style.css">
+    <script src="./script.js" defer></script>
 </head>
 
 <body>
 
-    <h1>Negroni 3D Test</h1>
+    <div id="menu">
+        <h1>Bairo Cocktail Menu</h1>
+        <p>Select a cocktail</p>
 
-    <model-viewer
-        id="viewer"
-        src="./models/negroni.glb"
-        camera-controls
-        auto-rotate
-        shadow-intensity="1"
-        exposure="1"
-        loading="eager">
-    </model-viewer>
+        <button onclick="showDrink('margarita')">Margarita</button>
+        <button onclick="showDrink('oldFashioned')">Old Fashioned</button>
+        <button onclick="showDrink('negroni')">Negroni</button>
+        <button onclick="showDrink('spritz')">Spritz</button>
+        <button onclick="showDrink('french72')">French 72</button>
+    </div>
 
-    <p id="status">Loading model...</p>
+    <div id="drink">
+        <button onclick="backToMenu()">← Back to Menu</button>
 
-    <script>
-        const viewer = document.querySelector('#viewer');
-        const status = document.querySelector('#status');
+        <h1 id="drinkName"></h1>
 
-        viewer.addEventListener('load', () => {
-            status.textContent = 'Model loaded successfully!';
-            console.log('3D model loaded');
-        });
+        <model-viewer
+            id="viewer"
+            camera-controls
+            auto-rotate
+            shadow-intensity="1"
+            exposure="1"
+            loading="eager">
+        </model-viewer>
 
-        viewer.addEventListener('error', (event) => {
-            status.textContent = 'Model loading failed. Check console.';
-            console.error('Model error:', event.detail);
-        });
-    </script>
+        <p id="status">Loading model...</p>
+        <p>Drag to rotate • Scroll or pinch to zoom</p>
+    </div>
 
 </body>
 </html>
