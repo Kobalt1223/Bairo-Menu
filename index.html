@@ -1,22 +1,64 @@
+
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1">
 
     <script type="module"
-        src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js">
+      src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.1.0/model-viewer.min.js">
     </script>
+
+    <style>
+        body {
+            background: #111;
+            color: white;
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+
+        model-viewer {
+            display: block;
+            width: 100%;
+            max-width: 500px;
+            height: 500px;
+            margin: 0 auto;
+            background: #333;
+        }
+    </style>
 </head>
 
 <body>
 
-    <h1>Model Viewer Test</h1>
+    <h1>Negroni 3D Test</h1>
 
     <model-viewer
+        id="viewer"
         src="./models/negroni.glb"
         camera-controls
-        style="width: 500px; height: 500px;">
+        auto-rotate
+        shadow-intensity="1"
+        exposure="1"
+        loading="eager">
     </model-viewer>
+
+    <p id="status">Loading model...</p>
+
+    <script>
+        const viewer = document.querySelector('#viewer');
+        const status = document.querySelector('#status');
+
+        viewer.addEventListener('load', () => {
+            status.textContent = 'Model loaded successfully!';
+            console.log('3D model loaded');
+        });
+
+        viewer.addEventListener('error', (event) => {
+            status.textContent = 'Model loading failed. Check console.';
+            console.error('Model error:', event.detail);
+        });
+    </script>
 
 </body>
 </html>
