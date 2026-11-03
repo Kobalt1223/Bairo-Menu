@@ -3,12 +3,13 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1">
 
     <title>Bairo Cocktail Menu</title>
 
     <script type="module"
-        src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.1.0/model-viewer.min.js">
+      src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.1.0/model-viewer.min.js">
     </script>
 
     <link rel="stylesheet" href="./style.css">
@@ -28,74 +29,68 @@
         <button onclick="showDrink('french72')">French 72</button>
     </div>
 
-    
-<div id="drink">
-    <button onclick="backToMenu()">← Back to Menu</button>
-
-    <h1 id="drinkName"></h1>
-
-    <div class="viewer-container">
-
-        <button class="nav-arrow left"
-                onclick="changeDrink(-1)"
-                aria-label="Previous cocktail">
-            &#10094;
+    <div id="drink">
+        <button class="back-button" onclick="backToMenu()">
+            ← Back to Menu
         </button>
 
-        <model-viewer
-            id="viewer"
-            camera-controls
-            touch-action="none"
-            auto-rotate
-            ar
-            ar-modes="webxr scene-viewer quick-look"
-            ar-scale="auto"
-            shadow-intensity="1"
-            exposure="1"
-            loading="eager">
-        </model-viewer>
+        <h1 id="drinkName"></h1>
 
-        <button class="nav-arrow right"
-                onclick="changeDrink(1)"
-                aria-label="Next cocktail">
-            &#10095;
-        </button>
+        <div class="viewer-container">
 
+            <button class="nav-arrow left"
+                    onclick="changeDrink(-1)"
+                    aria-label="Previous cocktail">
+                &#10094;
+            </button>
+
+            <model-viewer
+                id="viewer"
+                camera-controls
+                touch-action="none"
+                auto-rotate
+                ar
+                ar-modes="webxr scene-viewer quick-look"
+                ar-scale="auto"
+                shadow-intensity="1"
+                exposure="1"
+                loading="eager">
+            </model-viewer>
+
+            <button class="nav-arrow right"
+                    onclick="changeDrink(1)"
+                    aria-label="Next cocktail">
+                &#10095;
+            </button>
+
+        </div>
+
+        <p id="status"></p>
+
+        <div class="action-buttons">
+            <button onclick="activateAR()">View in AR</button>
+            <button onclick="openIngredients()">Ingredients</button>
+        </div>
+
+        <p class="hint">Drag to rotate • Pinch to zoom</p>
     </div>
 
-    <p id="status"></p>
+    <div id="ingredientsOverlay" class="overlay"
+         onclick="closeIngredients()">
 
-    <div class="action-buttons">
-        <button id="arButton" onclick="activateAR()">
-            View in AR
-        </button>
+        <div class="overlay-content"
+             onclick="event.stopPropagation()">
 
-        <button onclick="openIngredients()">
-            Ingredients
-        </button>
+            <button class="close-overlay"
+                    onclick="closeIngredients()"
+                    aria-label="Close ingredients">
+                &times;
+            </button>
+
+            <h2>Ingredients</h2>
+            <p id="ingredientsText"></p>
+        </div>
     </div>
-
-    <p class="hint">Drag to rotate • Pinch to zoom</p>
-</div>
-
-<div id="ingredientsOverlay" class="overlay"
-     onclick="closeIngredients()">
-
-    <div class="overlay-content"
-         onclick="event.stopPropagation()">
-
-        <button class="close-overlay"
-                onclick="closeIngredients()"
-                aria-label="Close ingredients">
-            &times;
-        </button>
-
-        <h2>Ingredients</h2>
-
-        <p id="ingredientsText"></p>
-
-    </div>
-</div>
 
 </body>
 </html>
