@@ -3,27 +3,32 @@ const drinks = {
     margarita: {
         name: "Margarita",
         model: "./models/margarita.glb",
-        ingredients: "Tequila, Cointreau, Lime."
+        iosModel: "./models/margarita.usdz",
+        ingredients: "Ingredients coming soon."
     },
     oldFashioned: {
         name: "Old Fashioned",
         model: "./models/old-fashioned.glb",
-        ingredients: "Bourbon, Angostura Bitters, Sugar, Orange."
+        iosModel: "./models/old-fashioned.usdz",
+        ingredients: "Ingredients coming soon."
     },
     negroni: {
         name: "Negroni",
         model: "./models/negroni.glb",
+        iosModel: "./models/negroni.usdz",
         ingredients: "Campari, Antica Formula, JJ Whitley"
     },
     spritz: {
         name: "Spritz",
         model: "./models/spritz.glb",
-        ingredients: "Prosecco, Aperitive, Soda."
+        iosModel: "./models/spritz.usdz",
+        ingredients: "Ingredients coming soon."
     },
     french72: {
         name: "French 72",
         model: "./models/french-72.glb",
-        ingredients: "Prosecco, Tatra 72, Honey, Lime."
+        iosModel: "./models/french-72.usdz",
+        ingredients: "Ingredients coming soon."
     }
 };
 
@@ -44,7 +49,16 @@ function showDrink(drinkID) {
     document.getElementById("drinkName").textContent = drink.name;
 
     status.textContent = "Loading model...";
-    viewer.src = drink.model;
+
+    // iOS AR model
+    if (drink.iosModel) {
+        viewer.setAttribute("ios-src", drink.iosModel);
+    } else {
+        viewer.removeAttribute("ios-src");
+    }
+
+    // Regular 3D and Android AR model
+    viewer.setAttribute("src", drink.model);
 }
 
 function changeDrink(direction) {
@@ -57,14 +71,20 @@ function changeDrink(direction) {
 
 function backToMenu() {
     closeIngredients();
+
     document.getElementById("drink").style.display = "none";
     document.getElementById("menu").style.display = "block";
+
     viewer.removeAttribute("src");
+    viewer.removeAttribute("ios-src");
 }
 
 function activateAR() {
     if (viewer.canActivateAR) {
-        viewer.activateAR();
+        viewer.activateAR().catch(error => {
+            console.error("AR launch failed:", error);
+            alert("Could not open AR on this device.");
+        });
     } else {
         alert("AR is not available on this device or browser.");
     }
